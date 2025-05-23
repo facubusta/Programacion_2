@@ -18,7 +18,7 @@ public class TarjetaDeCredito {
     }
     
     public boolean puedoPagar(double monto) {
-        return monto >= saldo;
+        return saldo >= monto;
         
     }
     

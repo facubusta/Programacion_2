@@ -11,7 +11,7 @@ public class Posnet {
         validarDatos(tarjeta, monto, cuotas);
         double total = calcularMontoTotal(monto, cuotas);
         if (tarjeta.puedoPagar(total)){
-             tarjeta.debitar(monto);
+             tarjeta.debitar(total);
              return new Ticket(tarjeta.nombreCompletoTitular() , total, total / cuotas);
             }
         }
