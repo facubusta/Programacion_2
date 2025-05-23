@@ -2,40 +2,48 @@ package ejerciciointegrador;
 
 
 public class TarjetaDeCredito {
-    private String entidadFinanciera;
+    private EntidadFinanciera entidadFinanciera;
     private String entidadBancaria;
     private String numero;
-    private double saldoDisponible;
+    private double saldo;
     private Persona titular;
 
-    public TarjetaDeCredito(String entidadFinanciera, String entidadBancaria,
-            String numero, double saldoDisponible, Persona titular) {
+    public TarjetaDeCredito(EntidadFinanciera entidadFinanciera, String entidadBancaria,
+        String numero, double saldoDisponible, Persona titular) {
         this.entidadFinanciera = entidadFinanciera;
         this.entidadBancaria = entidadBancaria;
         this.numero = numero;
-        this.saldoDisponible = saldoDisponible;
+        this.saldo = saldoDisponible;
         this.titular = titular;
     }
     
-    public boolean tieneSaldoDisponible(double monto) {
-        return saldoDisponible >= monto;
+    public boolean puedoPagar(double monto) {
+        return monto >= saldo;
+        
     }
     
-    public void descontar(double monto) {
-        if (tieneSaldoDisponible(monto)) {
-            saldoDisponible -= monto;
-        }
+    public void debitar(double monto) {
+        if (puedoPagar(monto)) {
+            saldo -= monto;
+        } 
     }
     
-    public Persona getTitular() {
-        return titular;
+    public String nombreCompletoTitular(){
+        return titular.getNombreCompleto();
     }
-   
+
     @Override
     public String toString() {
-        return "TarjetaDeCredito{" + "entidadFinanciera=" + entidadFinanciera + ", entidadBancaria=" + entidadBancaria + ", numero=" + numero + ", saldoDisponible=" + saldoDisponible + ", titular=" + titular + '}';
+        return "TarjetaDeCredito{" + "entidadFinanciera=" + entidadFinanciera + ", entidadBancaria=" + entidadBancaria + ", numero=" + numero + ", saldo=" + saldo + ", titular=" + titular + '}';
     }
     
     
-    
+  
 }
+
+   
+   
+   
+    
+    
+

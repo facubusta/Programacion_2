@@ -11,7 +11,7 @@ public class Main {
             "juan.perez@email.com");
 
         TarjetaDeCredito tarjeta = new TarjetaDeCredito(
-            "Visa",
+            EntidadFinanciera.MASTERCARD,
             "Banco Nación",
             "4500-1234-5678-9010",
             30000,

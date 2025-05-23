@@ -2,7 +2,7 @@ package ejerciciointegrador;
 
 
 public class Persona {
-    private String dni;
+    private final String dni;
     private String nombre;
     private String apellido;
     private String telefono;
@@ -17,7 +17,7 @@ public class Persona {
     }
     
     public String getNombreCompleto() {
-    return nombre + " " + apellido;
+        return nombre + " " + apellido;
     }
 
     @Override
